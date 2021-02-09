@@ -35,18 +35,7 @@ function askTimer() {
   return inquirer.prompt(questions);
 }
 
-// var Progress = clui.Progress;
-// var thisProgressBar = new Progress(60);
-
 var ProgressBar = require("progress");
-
-// var bar = new ProgressBar(':bar', { total: 100 });
-var bar = new ProgressBar("Timer :bar :my_time", {
-  complete: "=",
-  incomplete: " ",
-  width: 80,
-  total: 80,
-});
 
 function format_time(seconds) {
   var date = new Date(0);
@@ -54,12 +43,27 @@ function format_time(seconds) {
   var timeString = date.toISOString().substr(11, 8);
   return timeString;
 }
+
 const run = async () => {
   const results = await askTimer();
-  console.log(results);
+  console.log();
+
+  var now = new Date();
+  var finish = new Date(now.setMinutes(now.getMinutes() + results.minutes));
+
+  var bar = new ProgressBar(`:my_time  :bar  Finish: ${finish.toTimeString().slice(0,5)}`, {
+    complete: "=",
+    head: ">",
+    incomplete: " ",
+    width: 60,
+    total: results.minutes * 60,
+  });
 
   var timer = setInterval(function () {
-    bar.tick({ my_time: format_time(bar.curr) });
+    bar.tick({ 
+      my_time: format_time(bar.curr),
+      finish: finish
+    });
     if (bar.complete) {
       clearInterval(timer);
     }
