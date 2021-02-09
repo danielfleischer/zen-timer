@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Timer app for meditation",
   "main": "index.js",
+  "bin": {
+    "timer": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,6 +22,7 @@
     "figlet": "^1.5.0",
     "inquirer": "^7.3.3",
     "lodash": "^4.17.20",
-    "minimist": "^1.2.5"
+    "minimist": "^1.2.5",
+    "progress": "^2.0.3"
   }
 }
