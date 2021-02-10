@@ -31,14 +31,14 @@ function askTimer() {
       type: "list",
       default: 0,
       choices: util.range(1, 121),
-      message: "Select meditation length:",
+      message: "Select meditation length (min.):",
     },
     {
-      name: "bell",
+      name: "interval",
       type: "list",
       default: "None",
       choices: util.range(1, 31).concat("None", "Middle"),
-      message: "Select interval timer:",
+      message: "Select interval timer (min.):",
     },
   ];
   return inquirer.prompt(questions);
@@ -57,14 +57,26 @@ function setBar(results, finish) {
   );
 }
 
-function setTimer(bar, finish) {
+function setTimer(bar, finish, interval) {
   setInterval(function () {
     bar.tick({
       my_time: format_time(bar.curr),
       finish: finish,
     });
+
     if (bar.complete) {
-      clearInterval(timer);
+      clearInterval(this);
+      player.play("bell1.mp3", function (err) {
+        if (err) throw err;
+      });
+    }
+
+    if (interval && bar.curr > 0 && !bar.complete) {
+      if (bar.curr % interval == 0) {
+        player.play("bell2.mp3", function (err) {
+          if (err) throw err;
+        });
+      }
     }
   }, 1000);
 }
@@ -80,12 +92,22 @@ async function run() {
   var now = new Date();
   var finish = new Date(now.setMinutes(now.getMinutes() + results.minutes));
 
-  var bar = setBar(results, finish)
-  var timer = setTimer(bar, finish)
+  var interval;
 
-  player.play("bell1.mp3", function (err) {
-    if (err) throw err;
-  });
+  switch (results.interval) {
+    case "None":
+      interval = null;
+      break;
+    case "Middle":
+      interval = (results.minutes / 2) * 60;
+      break;
+    default:
+      interval = results.interval * 60;
+      break;
+  }
+
+  var bar = setBar(results, finish);
+  var timer = setTimer(bar, finish, interval);
 }
 
 run();
