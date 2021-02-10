@@ -1,0 +1,17 @@
+* Timer + Intervals
+:PROPERTIES:
+:CREATED:  [2021-02-10 Wed 09:27]
+:END:
+
+
+** Todo
+:PROPERTIES:
+:CREATED:  [2021-02-10 Wed 09:28]
+:END:
+
+- [X] Sounds.
+- [ ] Intervals.
+- [ ] Optional total time argument for faster starts.
+- [ ] Put on github.
+- [ ] Learn to put on npm. 
+- [ ] Nicer colors overall.

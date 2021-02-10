@@ -6,6 +6,8 @@ const figlet = require("figlet");
 const inquirer = require("inquirer");
 const clui = require("clui");
 const util = require("lodash/util");
+var player = require('play-sound')(opts = {})
+
 
 clear();
 
@@ -42,11 +44,17 @@ function format_time(seconds) {
   date.setSeconds(seconds);
   var timeString = date.toISOString().substr(11, 8);
   return timeString;
-}
+} 
+
 
 const run = async () => {
   const results = await askTimer();
   console.log();
+
+  
+  player.play('bell1.mp3', function(err){
+    if (err) throw err
+  })
 
   var now = new Date();
   var finish = new Date(now.setMinutes(now.getMinutes() + results.minutes));
@@ -66,6 +74,11 @@ const run = async () => {
     });
     if (bar.complete) {
       clearInterval(timer);
+  
+      player.play('bell1.mp3', function(err){
+        if (err) throw err
+      })
+
     }
   }, 1000);
 
