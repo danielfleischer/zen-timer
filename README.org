@@ -1,8 +1,11 @@
-* Timer + Intervals
+* Meditation Timer
 :PROPERTIES:
 :CREATED:  [2021-02-10 Wed 09:27]
 :END:
 
+Small cli timer for meditation - or anything else.
+
+You can set an interval timer; for example, it can ring every 10 minutes or in the middle of the session. 
 
 ** Todo
 :PROPERTIES:
@@ -10,7 +13,7 @@
 :END:
 
 - [X] Sounds.
-- [ ] Intervals.
+- [X] Intervals.
 - [ ] Optional total time argument for faster starts.
 - [ ] Put on github.
 - [ ] Learn to put on npm. 
