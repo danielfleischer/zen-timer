@@ -66,14 +66,14 @@ function setTimer(bar, finish, interval) {
 
     if (bar.complete) {
       clearInterval(this);
-      player.play("bell1.mp3", function (err) {
+      player.play("sounds/bell1.mp3", function (err) {
         if (err) throw err;
       });
     }
 
     if (interval && bar.curr > 0 && !bar.complete) {
       if (bar.curr % interval == 0) {
-        player.play("bell2.mp3", function (err) {
+        player.play("sounds/bell2.mp3", function (err) {
           if (err) throw err;
         });
       }
@@ -85,7 +85,7 @@ async function run() {
   const results = await askTimer();
 
   console.log();
-  player.play("bell1.mp3", function (err) {
+  player.play("sounds/bell1.mp3", function (err) {
     if (err) throw err;
   });
 
