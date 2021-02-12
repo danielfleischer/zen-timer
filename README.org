@@ -3,9 +3,19 @@
 :CREATED:  [2021-02-10 Wed 09:27]
 :END:
 
-Small cli timer for meditation - or anything else.
+Simple cli timer for meditation - or anything else.
 
-You can set an interval timer; for example, it can ring every 10 minutes or in the middle of the session. 
+Install via ~npm install -g timer~.
+
+[[file:images/1.png]]
+
+You can set an interval timer; for example, it can ring every 10 minutes or in the middle of the session.
+
+[[file:images/2.png]]
+
+There's a progress bar and the time at the finish is presented:
+
+[[file:images/3.png]]
 
 ** Todo
 :PROPERTIES:
@@ -14,7 +24,7 @@ You can set an interval timer; for example, it can ring every 10 minutes or in t
 
 - [X] Sounds.
 - [X] Intervals.
-- [ ] Optional total time argument for faster starts.
 - [ ] Put on github.
+- [ ] Optional total time argument for faster starts.
 - [ ] Learn to put on npm. 
 - [ ] Nicer colors overall.
