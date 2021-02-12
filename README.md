@@ -6,7 +6,7 @@ Simple cli timer for meditation - or anything else.
 <img src="images/1.png" width="400">
 
 ### Install
-Install via `npm install -g timer`.
+Install via `npm install -g zen-timer` and then just call `timer`.
 
 
 ### Usage
