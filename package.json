@@ -1,6 +1,6 @@
 {
   "name": "zen-timer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Timer app for meditation",
   "main": "index.js",
   "bin": {
@@ -25,7 +25,6 @@
     "figlet": "^1.5.0",
     "inquirer": "^7.3.3",
     "lodash": "^4.17.20",
-    "minimist": "^1.2.5",
     "play-sound": "^1.1.3",
     "progress": "^2.0.3"
   }

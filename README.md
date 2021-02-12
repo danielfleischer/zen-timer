@@ -23,6 +23,6 @@ There's a progress bar and the time at the finish is presented:
 -   [X] Sounds.
 -   [X] Intervals.
 -   [X] Put on github.
+-   [x] Learn to put on npm.
 -   [ ] Optional: total time argument for faster starts.
--   [ ] Learn to put on npm.
 -   [ ] Nicer colors overall.
