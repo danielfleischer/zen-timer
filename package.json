@@ -13,6 +13,10 @@
     "timer",
     "meditation"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/danielfleischer/timer"
+  },
   "author": "Daniel Fleischer",
   "license": "ISC",
   "dependencies": {
