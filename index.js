@@ -29,7 +29,7 @@ function askTimer() {
     {
       name: "minutes",
       type: "list",
-      default: 0,
+      default: 29,
       choices: util.range(1, 121),
       message: "Select meditation length (min.):",
     },
