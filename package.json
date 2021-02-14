@@ -1,6 +1,6 @@
 {
   "name": "zen-timer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Timer app for meditation",
   "main": "index.js",
   "bin": {

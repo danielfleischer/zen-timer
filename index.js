@@ -7,7 +7,6 @@ const inquirer = require("inquirer");
 const util = require("lodash/util");
 const player = require("play-sound")((opts = {}));
 const ProgressBar = require("progress");
-const { join } = require("path");
 
 function format_time(seconds) {
   var date = new Date(0);
@@ -66,14 +65,14 @@ function setTimer(bar, finish, interval) {
 
     if (bar.complete) {
       clearInterval(this);
-      player.play(join(__dirname, "sounds/bell1.mp3"), function (err) {
+      player.play(__dirname + "/sounds/bell1.mp3", function (err) {
         if (err) throw err;
       });
     }
 
     if (interval && bar.curr > 0 && !bar.complete) {
       if (bar.curr % interval == 0) {
-        player.play(join(__dirname, "sounds/bell2.mp3"), function (err) {
+        player.play(__dirname + "/sounds/bell2.mp3", function (err) {
           if (err) throw err;
         });
       }
@@ -85,7 +84,7 @@ async function run() {
   const results = await askTimer();
 
   console.log();
-  player.play(join(__dirname, "sounds/bell1.mp3"), function (err) {
+  player.play(__dirname + "/sounds/bell1.mp3", function (err) {
     if (err) throw err;
   });
 
