@@ -1,5 +1,6 @@
-
 # Meditation Timer
+[![GitHub package.json version](https://img.shields.io/github/package-json/v/danielfleischer/timer)]() [![npm](https://img.shields.io/npm/v/zen-timer)](https://www.npmjs.com/package/zen-timer)
+
 
 Simple cli timer for meditation - or anything else.
 
